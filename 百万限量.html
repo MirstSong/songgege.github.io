@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title></title>
+		<link rel="icon" href="favicon.ico" type="image/x-icon" />
+        
+        <link rel="stylesheet" type="text/css" href="js/animate.css" />
+		<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
+		<script src="js/jquery-3.3.1.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+        <script type="text/javascript" src="js/fullpage.js"></script>
+        <style type="text/css">
+            body {
+                background: url(img/content-bg.jpg) no-repeat;
+                background-size:100% 100%; 
+                background-attachment: fixed;
+            }
+            .section{
+            	max-width:100%; 
+            	height: 100%;
+            }
+            .section h1{
+            	margin: 0;
+            }
+            .section1 {
+                background: url(img/index-kv-1m-2880.jpg) no-repeat;
+                background-size:100% 100%; 
+                background-attachment: fixed;
+            }
+
+           
+            .section1 .BW_top{
+            	max-width: 70%;
+            	margin: auto auto;
+            	padding-top:10%;
+            	color: white;
+            	overflow:hidden;
+            }
+            .section1 .BW_top p{
+            	font-size: 30px;
+            	font-weight: 100;
+            }
+            .section1 .BW_top .BW1_left{
+            	float: left;
+            }
+             .section1 .BW_top .BW1_right{
+            	float:right;
+            	text-align: right;
+            }
+            body>a{
+            	font-size:26px;
+            	color: white;
+            	text-decoration: none;
+            	position:absolute;top:20px;right:20px;
+            	z-index: 99999;
+            }
+            body>a:hover{
+            	color: #5E5E5E;
+            	text-decoration: none;
+            }
+            .section1 span{
+            	position: absolute;bottom:5%;right:15%;
+            	color: white;
+            	font-size: 16px;
+            }
+            .section2{
+            	background: url(img/1M-8m-poster-190621-1920.jpg) no-repeat;
+            	text-align: center;
+            	background-size:100%;
+            }
+            .section2 a{
+            	margin-top: 25%;
+            	display: inline-block;
+            	width: 80px;
+            	height:80px;
+            	background: url(img/音频播放.png);
+            	background-size:100%;
+            }
+           .section3 {
+           	background:rgba(105,105,105,0.2);
+           	color:white;
+           	text-align: center;
+           }
+           .section3 .BW_new{
+            	max-width: 70%;
+           	padding-top:10%; margin: auto;
+           }
+           .section3 .BW_new .BW_zi{
+           	 margin: auto;
+           	  max-width:80%;
+           	  height:30%;
+           	  background:rgba(125,125,125,0.2);
+           	  padding: 50px;
+           	  font-size: 16px;
+           	  text-align:left;
+           }
+          .section3 .BW_new .BW_news{
+          	overflow: hidden;
+          }
+          .section4{
+            	max-width: 60%;
+            	margin:auto;
+          }
+          .section4 .BW_toot{
+          	padding-top: 15%;
+          	color: white;
+          	text-align: center;
+          }
+          .section4 .BW_toot h1{
+          	text-align: center;
+          	margin-bottom: 20px;
+          }
+          
+          .section4 .BW_toot>div{
+          	padding: 10px;
+          	border-bottom: 1px solid white;
+          	display:inline-block;
+          	color: white;
+          }
+          .section4 .BW_toot>div img{
+          		float: left;
+          	padding:0 20px;
+          	
+          }
+           .section4 .BW_toot>div a{
+           	text-decoration: none;color: white;
+           	display: block;
+           	overflow:hidden;
+           	text-align: left;
+           }
+           .section4 .BW_toot>div a:hover{
+           	 background:rgba(94,83,155,0.3);
+           	 transition:1.5s all;
+           }
+           .section4 .BW_toot>div a span:last-child{
+           	   font-weight:900;
+           }
+           .section4 .BW_toot>div a span:first-child{
+           	   font-weight:900;
+           }
+           .section4 .BW_toot p{
+           	margin-top: 10px;
+           	cursor: pointer;
+           	border: 1px solid white;
+           	padding:10px 25px;
+           	display:inline-block;
+           }
+           .section4 .BW_toot p:hover{
+           	 background:rgba(94,83,155,0.3);
+           	 transition:1.5s all;
+           }
+           .LE_fx{
+           	   width:300px;
+           	   float: right;
+           	   position: relative;bottom:15%;right:3%;
+           }
+           .LE_fx .fx{
+           	  cursor: pointer;
+           	   width: 70px;height: 70px;
+           	   display:inline-block;
+           	   float: right;
+           	   /*position: absolute;bottom:50px;right:15px;*/
+           }
+            .LE_fx  .fx a{
+           	    width: 100%;
+           	    height: 100%;
+           	    display: inline-block;
+           	    background:url(img/fenxiang2.png);
+           	    background-size: 100%;
+           	    float:right;
+           	    margin-top:20px;
+           	    margin-right:5px ;
+           }
+           
+           .LE_fx .fx a:hover{
+           	   background: url(img/fenxiang.png);
+           	   background-size: 100%;
+           }
+           .LE_fx  .bj{
+           	   width:200px;height: 100px;
+           	   background:white;
+           }
+           .LE_fx  .bj .sanjiao{
+           	  width: 20%;
+           	  position: absolute;right:62px;top:25px;
+           }
+            .LE_fx  .bj .bj_left{
+            	width: 100px;height: 100px;
+            	float: left;
+            	display: inline-block;
+            	background:url(img/xinliangweibo.png) no-repeat center;
+           	    background-size: 70%;
+            }
+            
+             .LE_fx  .bj .bj_left:hover{
+             	  background: url(img/xinlangweibo1.png) no-repeat center;
+           	   background-size: 70%;
+             }
+            .LE_fx  .bj .bj_right{
+            	width: 100px;height: 100px;
+            	float: left;
+            	display: inline-block;
+            	background:url(img/weixin.png) no-repeat center;
+           	    background-size: 60%;
+            }
+            .LE_fx  .bj .bj_right:hover{
+             	  background: url(img/wode.jpg) no-repeat center;
+           	   background-size: 70%;
+             }
+            .LE_fx .bj{
+            	display: none;
+            }
+        </style>
+    </head>
+    <body>
+			<a href="new_file.html">访问官网 > </a>
+        <div id="ido">
+    <div class="section section1  active">
+    	
+    	<div class="BW_top">
+	    	<div class="BW1_left">
+	        	<h1>NX 300h</h1>
+	        	<p>百万纪念限量版</p>
+	        	<img src="img/models-logo.png" alt="" width="50%"/>
+	        </div>
+	        <div class="BW1_right">
+	        	<h1 >NX 300h</h1>
+	        	<p>百万纪念限量版</p>
+	        	<img src="img/models-logo.png" alt="" width="50%" />
+	        </div>
+    	</div>
+        <span>*根据雷克萨斯中国销售数据，截止至2019年6月11日，雷克萨斯品牌在华累计销量突破100万台。</span>
+    </div>
+    <div class="section section2">
+        <a href="#"></a>
+    </div>
+    <div class="section section3">
+    	<div class="BW_new">
+    		<h3>感谢·感恩·感动</h3>
+	        <h3 style="text-align: left; margin-left:10%;">尊敬的LEXUS雷克萨斯车主：</h3>
+	        <div class="BW_zi">
+	        	感谢您给予LEXUS雷克萨斯品牌的厚爱。已走过30年历程的LEXUS雷克萨斯自2005年进入中国，秉承至诚之心，执守匠人精神，终迎来在华累计销售逾百万台的新里程。这一切，是您始终如一的支持与信任，鞭策我们不断前行。值此百万台达成系列庆祝活动之际，请允许我们 - 所有雷克萨斯人，向您致以最诚挚的感谢！
+	“立于百万 臻于至善” ，LEXUS雷克萨斯将继续“为功能注入情感，让性能点燃激情，令科技充满想象”，用有温度的豪华温暖您的生活，用有质感的产品愉悦您的体验，用有预见的服务超越您的期待。
+	“以人为本、顾客为尊” ，LEXUS雷克萨斯将一如以往，践行“顾客第一”的品牌理念，以我们的炽热之心为您带来更加非凡的体验。
+	“百尺竿头心至诚，万古长青凌云志”，LEXUS雷克萨斯愿与您携手共赴“领未见·探非凡”的未来旅程。
+	        </div>
+    	    <p style="text-align: right;margin-right:10%;margin-top: 20px;">
+    	    	LEXUS雷克萨斯中国
+    	    	<br />
+                2019年6月
+    	    </p>
+    	    <div class="BW_news">
+        	<h2>感恩三重礼</h2>
+        	<div style=" float: left;margin-left: 30%;cursor: pointer;"><img src="img/钻石 (1).png" / style="border: 5px solid #bfbfbf; border-radius: 50%;width: 127.5px;height: 127.5px;"><h3>专属精品</h3>
+        	</div>
+        	<div style=" float: right;margin-right:30%;cursor: pointer;"><img src="img/维修.png" width="75%"/ style="border: 5px solid #bfbfbf; border-radius: 50%;padding:16px;">
+        	<h3>售后服务</h3></div>
+        </div>
+    	</div>
+        
+    </div>
+    <div class="section section4">
+          <div class="BW_toot">
+          	 <h1 >相关新闻</h1>
+          	 <div class="foot1">
+          	 	<img src="img/111_0.jpg" width="20%"/>
+          	 	<a href="#" style="line-height:25px;">
+<span>立于百万 臻于至善 LEXUS雷克萨斯在华累计销量突破100万台</span><br />
+<span>今天，“立于百万 臻于至善——LEXUS雷克萨斯中国第100万台交车仪式”在上海举行。LEXUS雷克萨斯中国执行副总经理大竹仁、LEXUS雷克萨斯中国副总经理徐崙出席交车仪式，将中国市场第100万台雷克萨斯——旗舰级豪华轿车LS 500h正式交付客户。</span><br />
+<span>2019年6月11日，上海</span></a>
+          	 </div>
+          	 <div class="foot2">
+          	 	<img src="img/1_96.jpg"width="20%"/>
+          	 	<a href="#">
+          	 		<span>阅读赋能人生 LEXUS雷克萨斯携手《经济观察报》启动2019“领读中国”项目</span><br />
+          	 		<span>今天，LEXUS雷克萨斯与《经济观察报》共同发起的2019 “领读中国”项目启动仪式在北京国贸西西弗书店举行，今年的“领读中国”项目以“阅读赋能人生”为主题，将阅读的概念延展到更广阔的范畴：在书籍之外，还包含对艺术品的鉴赏、对生活的感悟，启发阅读者的思考，赋予“探享家”们更大的能力，实现精神上及知识品味上的升华。</span><br />
+          	 		<span>2019年5月23日，北京</span>
+          	 	</a>
+          	 </div>
+          	 <div class="foot3">
+          	 	<img src="img/1-800-450.jpg"width="20%"/>
+          	 	<a href="$">
+          	 		<span>
+          	 			微见真意 阔观天下<br />LEXUS雷克萨斯旗舰级豪华MPV全新LM于2019上海车展全球首发
+          	 		</span><br />
+          	 		<span>旗舰级豪华MPV全新雷克萨斯LM于2019上海国际车展全球首发。LEXUS雷克萨斯将东方造车哲学的温度融入全新LM，以独具匠心的精湛工艺、以心至诚的待客之道和舒适非凡的驾乘感受，力求超越“移动工具”概念，呈现承载驾乘者精神与情感的心之居所。全新LM在中国首发，不仅彰显了中国市场在LEXUS雷克萨斯全球战略中的重要地位，更将为中国消费者带来更多元、更富有温度的豪华出行体验。</span><br />
+          	 		<span>2019年4月16日，上海</span>
+          	 	</a>
+          	 </div>
+             <p style="position: relative;">探索更多 <span id="a" style="position: absolute;right:15px;"> ></span></p>
+          </div>
+    </div>
+</div>
+
+
+    <div class="LE_fx">
+    	<div class="fx">
+    		<a href="#"></a>
+    	</div>
+    	<div class="bj">
+	    	<img class="sanjiao" src="img/sanjiao.png" alt="" />
+	    	<a class="bj_left" href="#" ></a>
+	    	<a class="bj_right" href="#"></a>
+	    </div>
+    </div>
+    </body>
+    <script>
+    		
+      	
+            $(function(){
+            	
+            	
+		         	$(".LE_fx").hover(function(){
+		        		$(".bj").show()
+		        		$(".fx a").css("background-image","url(img/fenxiang.png)")
+		         	},function(){
+		          		$(".bj").hide()
+		          		$(".fx a").css("background-image","url(img/fenxiang2.png)")
+		          	})
+		          	
+            	
+            	
+            	$(".BW_toot p").hover(function(){
+            		$("#a").animate({"right":"5px"})
+            	},function(){
+            		$("#a").animate({"right":"15px"})
+            		
+            	})
+            	
+		        $(".section2 a").click(function(){
+		    		  $('.section2 a').css("background-image","url(img/暂停.png)")
+		    	})
+		        $(".section2 a").mouseout(function(){
+		        	  $('.section2 a').css("background-image","url(img/音频播放.png)")
+		        })
+		            
+		            $("#ido").fullpage();
+            })	  
+    </script>
+</html>
+

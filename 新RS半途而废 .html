@@ -1,0 +1,1753 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="js/animate.css" />
+		<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
+		<script src="js/jquery-3.3.1.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<style type="text/css">
+			ul li{
+				list-style: none;
+			}
+			.collapse .nav .glyphicon-star-empty{
+				font-size: 18px;
+			}
+			.collapse .nav li{
+				font: "微软雅黑";
+			}
+			.navbar{
+				margin-bottom: 0;
+			}
+			.box{
+				padding: 0px;
+			}
+			.car{
+				border-bottom: 1px solid  #ADADAD;width:100%;height: 140px;
+			}
+			.cx img:hover{
+                filter:alpha(Opacity=90);-moz-opacity:0.3;opacity: 0.3;
+				transition: all 1s;
+			}
+			.yg img:hover{
+                filter:alpha(Opacity=90);-moz-opacity:0.3;opacity: 0.3;
+				transition: all 1s;
+			}
+			.jr img:hover{
+                filter:alpha(Opacity=90);-moz-opacity:0.3;opacity: 0.3;
+				transition: all 1s;
+			}
+			.top{
+				display: none;
+			}
+			.pinpai .brand a{
+				font-size: 20px;color: black;
+				line-height: 40px;
+			}
+			.pinpai .brand  ul{
+				margin-top: 40px;margin-left: 70px;
+			}
+			.history{
+				margin-top: 40px;
+			}
+			.history .zi{
+				margin: 0 0 20px 40px;
+			}
+			.history .zt{
+				background-color:whitesmoke;padding: 30px;
+        	box-shadow:1px 0 3px 0px rgba(0,0,0,0.5) inset;
+			}
+			.active{
+				display: none;
+			}
+			.jieshao{
+				position: relative;
+			}
+			.jieshao .history{
+				position: absolute;left: 0;top: 0;
+			}
+			.pinpai{
+				display:none;
+			}
+			.navbar_top{
+				position:relative;
+			}
+			.top{
+				position: absolute;
+				top:50px;left:-350px;
+			}
+			.pinpai{
+				position: absolute;
+				top:50px;left:-450px;
+			}
+			.zhi_hd .f_gn .c_cz .x_xw{
+				position:relative;
+			}
+			 .brand a{
+				font-size: 20px;color: black;
+				line-height: 40px;
+			}
+			 .brand  ul{
+				margin-top: 40px;margin-left: 70px;
+			}
+			 .brand  ul li{
+				margin-left:120px;
+			}
+			 .brand  ul li a{
+			 	color: whitesmoke;
+			 }
+			.tiandi .brand  ul li{
+				margin-left: 0px;
+			}
+			.hd{
+				background:rgba(0,0,0,0.7);
+				
+				display:none;
+				position: absolute;
+				top:50px;left:-450px;
+			}
+			.gn{
+				background:rgba(0,0,0,0.7);
+				display:none;
+				position: absolute;
+				top:50px;left:-600px;
+			}
+			.cz{
+				background:rgba(0,0,0,0.7);
+				
+				display:none;
+				position: absolute;
+				top:50px;left:-700px;
+			}
+			.c_cz .cz .brand  ul li{
+				margin-left:0px;
+			}
+			
+			.xw{
+				background:rgba(0,0,0,0.7);
+			    display:none;
+				position: absolute;
+				top:50px;left:-750px;
+			}
+			.navbar{
+				z-index: 100;
+				color: whitesmoke;
+			}
+			.carousel{
+				z-index:99;
+			}
+			.tiandi .pinpai ul li a{
+				color: whitesmoke;
+			}
+			 .carousel_banned .carousel-caption{
+				position: absolute;
+				left:-200px;top: 100px;
+				
+			}
+			.carousel-caption a{
+				color: white;
+			}
+			.appear .box{
+				background:rgba(0,0,0,0.7);
+			}
+			.tiandi .pinpai{
+				background:rgba(0,0,0,0.7);
+			}
+			.history .zt{
+				color: #000;
+			}
+			
+			
+			.navs .navs_top{
+				overflow: hidden;
+				height: 475px;
+			}
+			.navs .navs_top .navs_left {
+				overflow: hidden;
+				box-sizing:content-box;
+				padding: 0;
+			}
+			.navs .navs_top img{
+				width: 100%;
+			}
+			.navs .navs_top .navs_right {
+				overflow: hidden;
+				box-sizing:content-box;
+				padding: 0;
+			}
+			.navs .navs_top .navs_zi{
+				position: absolute;bottom: -10px;
+			}
+			.navs .navs_top .navs_zi h2{
+				padding: 0;margin: 0;
+			}
+			.navs .navs_top .navs_zi a{
+				color: #0000FF;
+			}
+			.navs .navs_top .navs_zi .zi_2{
+				display: none;
+			}
+			.navs .navs_foot img{
+				width: 100%;
+			}
+			
+			
+			.navs .navs_foot .navs_zi{
+				position: absolute;bottom: -10px;
+			}
+			.navs .navs_foot .navs_zi h3{
+				padding: 0;margin: 0;
+			}
+			.navs .navs_foot .navs_zi a{
+				color: #0000FF;
+			}
+			.navs .navs_foot .navs_zi .zi_2{
+				display: none;
+			}
+			.navs .navs_foot{
+				height: 475px;
+				overflow: hidden;
+			}
+			.navs .navs_foot>div{
+				padding: 0;
+			}
+			.foot .container p{
+				cursor: pointer;
+			}
+			.foot .container:first-child{
+				margin-top: 50px;
+			}
+			.foot .container:last-child{
+				margin-bottom: 50px;
+			}
+			.foot_bottom {
+				margin-top: 50px;
+				border-top: 1px solid #ccc;
+			}
+			.LE_top h2{
+				display:inline-block;
+				cursor:pointer;
+				
+			}
+			.LE_top  span {
+				text-decoration: none;
+				color: #000;
+				cursor:pointer;
+			}
+			.LE_top .gl{
+				float: right;
+				font-weight:800;
+				line-height:70px;
+			}
+			.LE_top{
+				color: #000;
+			}
+			.LE_top span{
+				padding: 0 8px;
+			}
+			.dingbu{
+				width: 100%;
+				position: fixed;top:0;left:0;
+				background:rgba(255,255,255,0.7);
+				color: #000;
+				transition: all 2s;
+				z-index: 999999;
+			}
+			
+			
+			.LE_banner .carousel-caption{
+				position: absolute;left:-30%;top:30%;
+			}
+			.LE_xw {
+				margin-top: 50px;
+				text-align: center;
+				font-weight:900;
+			}
+			.le-gotop{
+				position: fixed;right: 10px;bottom: 20px;
+				z-index: 999999;cursor: pointer;
+			}
+			.ES_banner .carousel-caption{
+				position: absolute;left:-30%;top:10%;
+			} 
+			.ES_navs {
+				text-align: center;
+				font-weight: bolder;
+				
+			}
+			.ES_navs h3{
+				margin-top:50px;
+			}
+			.ES_navs img{
+				width: 100%;
+				height: 100%;
+			}
+			.ES_foots{
+				margin-top: 50px;
+			}
+			.ES_foots .container{
+				text-align: center;
+			}
+		body{
+			text-align: center;
+			height: 1000000px;
+		}
+		.RS_nav{
+			width: 100%;
+			position:fixed;top:10px;
+		}
+		.RS_nav .RS_gundong span:first-child{
+			display: inline-block;
+			height: 3px;
+			max-width:300px;
+			padding-left:0%;
+			background:red;
+		}
+		.RS_nav .RS_gundong span:last-child{
+			display: inline-block;
+			height: 3px;
+			max-width:300px;
+			padding-right:0%;
+			background:red;
+		}
+		.RS_nav .RS_gundong p{
+			display: inline-block;
+			padding: 0 20px;
+		}
+		.RS_nav .RS_car .lt{
+			position: absolute;
+			top:0px; 
+		}
+		.RS_nav .RS_car {
+			position:fixed;right:0%
+		}
+	</style>
+	<body>
+		
+				<nav class="navbar navbar-default col-lg-12 hidden-md hidden-sm">
+			<div class="container navbar_top">
+				<div class="container-fluid ">
+					<div class="navbar-header">
+						<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+						<a class="navbar-brand" href="#"><img src="img/logo1.png" / style="width: 268px;height: 25px;"></a>
+					</div>
+					<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+						<ul class="nav navbar-nav navbar-right">
+							<li class="appear"><a href="#">车型总览</a>
+								<div class="container top">
+	    	<div class="row drop-down box">
+	    		<div class="col-lg-7 left" style=" height:700px;padding: 0;">
+	    			<div class="car">
+	    				<div class="col-lg-3 box">
+	    					<h4 style="text-align: center;margin-top: 20px;">CT</h4>
+	    					<img class="lexus"  src="img/ct-model-400x160.png" style="width: 165px;"/>
+	    					<p style="text-align: center;margin: 0px;">紧凑型豪华两厢车</p>
+	    				</div>
+	    			</div>
+	    		    <div class="car">
+	    		    	<div class="col-lg-3">
+	    		    		<h4 style="text-align: center;margin: 0;margin-top: 20px;">IS</h4>
+	    					<img class="lexus" src="img/is-model-400x160.png" style="width: 165px;"/>
+	    					<p style="text-align: center;margin: 0px;">中型豪华运动轿车</p>
+	    		    	</div>
+	    		    	<div class="col-lg-3">
+	    		    		<h4 style="text-align: center;margin: 0;margin-top: 20px;">ES</h4>
+	    					<img class="lexus" src="img/es-model-400x160.png" style="width: 165px;"/>
+	    					<p style="text-align: center;margin: 0px;">中大型豪华行政级轿车</p>
+	    		    	</div>
+	    		    	<div class="col-lg-3">
+	    		    		<h4 style="text-align: center;margin: 0;margin-top: 20px;">GS</h4>
+	    					<img class="lexus" src="img/is-model-400x160.png" style="width: 165px;"/>
+	    					<p style="text-align: center;margin: 0px;">中大型豪华运动轿车</p></div>
+	    		    	<div class="col-lg-3">
+	    		    		<h4 style="text-align: center;margin: 0;margin-top: 20px;">LS</h4>
+	    					<img class="lexus" src="img/ls-model-400x160.png" style="width: 165px;"/>
+	    					<p style="text-align: center;margin: 0px;">旗舰级豪华轿车</p></div>
+	    		    	</div>
+	    		    <div class="car">
+	    		    	<div class="col-lg-3">
+	    		    		<h4 style="text-align: center;margin: 0;margin-top: 20px;">UX</h4>
+	    					<img class="lexus" src="img/ux-model-400x160.png" style="width: 165px;"/>
+	    					<p style="text-align: center;margin: 0px;">豪华都市SUV</p>
+	    		    	</div>
+	    		    	<div class="col-lg-3">
+	    		    		<h4 style="text-align: center;margin: 0;margin-top: 20px;">NX</h4>
+	    					<img class="lexus" src="img/nx-model-400x160.png" style="width: 165px;"/>
+	    					<p style="text-align: center;margin: 0px;">中型豪华SUV</p>
+	    		    	</div>
+	    		    	<div class="col-lg-3">
+	    		    		<h4 style="text-align: center;margin: 0;margin-top: 20px;">RX</h4>
+	    					<img class="lexus" src="img/rx-model-400x160.png" style="width: 165px;"/>
+	    					<p style="text-align: center;margin: 0px;">中大型豪华SUV</p>
+	    		    	</div>
+	    		    	<div class="col-lg-3">
+	    		    		<h4 style="text-align: center;margin: 0;margin-top: 20px;">LX</h4>
+	    					<img class="lexus" src="img/lx-model-400x160.png" style="width: 165px;"/>
+	    					<p style="text-align: center;margin: 0px;">中大型豪华SUV</p>
+	    		    	</div>
+	    		    </div>
+	    		    <div class="car">
+	    		    	<div class="col-lg-3">
+	    		    		<h4 style="text-align: center;margin: 0;margin-top: 20px;">RC</h4>
+	    					<img class="lexus" src="img/rc-model-400x160.png" style="width: 165px;"/>
+	    					<p style="text-align: center;margin: 0px;">中型豪华轿跑车</p>
+	    		    	</div>
+	    		    	<div class="col-lg-3">
+	    		    		<h4 style="text-align: center;margin: 0;margin-top: 20px;">LC</h4>
+	    					<img class="lexus"  src="img/lc-model-400x160.png" style="width: 165px;"/>
+	    					<p style="text-align: center;margin: 0px;">旗舰豪华GT跑车</p>
+	    		    	</div>
+	    		    </div>
+	    		    <div class="car">
+	    		    	<div class="col-lg-3">
+	    		    		<h4 style="text-align: center;margin: 0;margin-top: 20px;">YACHT</h4>
+	    					<img  class="lexus"src="img/yacht-model-400x160.png" style="width: 175px;"/>
+	    					<p style="text-align: center;margin: 0px;">豪华游艇</p>
+	    		    	</div>
+	    		    </div>
+	    		</div>
+	    		    <div class="col-lg-5 reght" style=" height:700px;">
+	    		    	<div class="cx" style="position: relative;">
+	    		    		<img src="img/index-dropdownmenu_new-1-1-920x560.jpg"/ style="width: 100%;"><span style="position: absolute;top: 35px;left:180px;color: white;font-size: 20px;">车型筛选</span></div>
+	    		    	<div class="col-lg-6 yg" style="padding: 2px;">
+	    		    		<div><img src="img/bottomImg-190829.jpg" style="width: 100%;"/><span style="position: absolute;top: 35px;left:70px;color: white;font-size: 20px;">新车预告</span></div>
+	    		    	</div>
+	    		    	<div class="col-lg-6 jr" style="padding: 2px;">
+	    		    		<div><img src="img/index-dropdownmenu_new-1-3-460x560.jpg" style="width: 100%;"/>
+	    		    		<span style="position: absolute;top: 35px;left:70px;color: white;font-size: 20px;">金融服务</span></div>
+	    		    	</div>
+	    		    </div>
+	    		</div>
+	    	</div>
+							</li>
+							<li class="tiandi"><a href="#">品牌天地</a>
+								<div class="container pinpai">
+	    	<div class="row zong">
+	    		<div class="col-lg-5 brand"style="height: 600px;">
+	    			<ul>
+	    				<li><a href="#">品牌历史</a></li>
+	    				<li><a href="#">匠人匠心</a></li>
+	    				<li><a href="#">设计理念</a></li>
+	    				<li><a href="#">兼容之道</a></li>
+	    				<li><a href="#">至纯之音</a></li>
+	    				<li><a href="#">环保理念</a></li>
+	    				<li><a href="#">概念车</a></li>
+	    				<li><a href="#">全球品牌活动</a></li>
+	    				<li style="border-left:1px solid #ADADAD;"> <span style="border-bottom:1px solid #ADADAD;"> &nbsp&nbsp&nbsp&nbsp&nbsp</span><a href="#">雷克萨斯品牌杂志</a></li>
+	    				<li style="border-left:1px solid #ADADAD;"><span style="border-bottom:1px solid #ADADAD;"> &nbsp&nbsp&nbsp&nbsp&nbsp</span><a href="#">雷克萨斯设计大奖</a></li>
+	    				<li  style="border-left:1px solid #ADADAD;"><span style="border-bottom:1px solid #ADADAD;"> &nbsp&nbsp&nbsp&nbsp&nbsp</span><a href="#">雷克萨斯品牌体验空间INTERSECT</a></li>
+	    				<li  style="border-left:1px solid #ADADAD;"><span style="border-bottom:1px solid #ADADAD;"> &nbsp&nbsp&nbsp&nbsp&nbsp</span><a href="#">雷克萨斯全球微电影</a></li>
+	    			</ul>
+	    		</div>
+	    		<div class="col-lg-7 jieshao">
+	    			  <div class="history active ">
+	    			  	<div class="zt">
+	    			  		<div class="zi">
+	    			  	  	<h4>品牌历史</h4>
+	    			  	  	<h5>回眸岁月，雷克萨斯前行路上成就不止；</h5>
+	    			  	  	<h5>所有的一切，都诉说着雷克萨斯历日旷久斐然业绩，更预言者品牌前进的方向。</h5>
+	    			  	  </div>
+	    			  	</div>
+	    			  	  <div>
+	    			  	  	<img src="img/index-dropdownmenu-2-1-1354x810.jpg" style="width: 100%;"/>
+	    			  	  </div>
+	    			  </div>
+	    		      <div class="history ">
+	    			  	<div class="zt">
+	    			  		<div class="zi">
+	    			  	  	<h4>匠人匠心</h4>
+	    			  	  	<h5>雷克萨斯专注将新产品，酒糟每一个极致细节，从看到他到驾驶，都能感受到人车合一的感觉</h5>
+	    			  	  </div>
+	    			  	</div>
+	    			  	  <div>
+	    			  	  	<img src="img/index-dropdownmenu-2-2-1354x810.jpg" style="width: 100%;"/>
+	    			  	  </div>
+	    			  </div>
+	    		      <div class="history ">
+	    			  	<div class="zt">
+	    			  		<div class="zi">
+	    			  	  	<h4>设计理念</h4>
+	    			  	  	<h5>L-lexus与陈妙是雷克萨斯的全新设计理念</h5>
+	    			  	  </div>
+	    			  	</div>
+	    			  	  <div>
+	    			  	  	<img src="img/index-dropdownmenu-2-3-1354x810.jpg" style="width: 100%;"/>
+	    			  	  </div>
+	    			  </div>
+	    		      <div class="history ">
+	    			  	<div class="zt">
+	    			  		<div class="zi">
+	    			  	  	<h4>兼·容之道</h4>
+	    			  	  	<h5>雷克萨斯家族以兼·容之道，设计新环保理念的概念车，科技与环保相融相生</h5>
+	    			  	  </div>
+	    			  	</div>
+	    			  	  <div>
+	    			  	  	<img src="img/index-dropdownmenu-4-2-190515-1354x810.jpg" style="width: 100%;"/>
+	    			  	  </div>
+	    			  </div>
+	    		      <div class="history ">
+	    			  	<div class="zt">
+	    			  		<div class="zi">
+	    			  	  	<h4>至纯之音</h4>
+	    			  	  	<h5>Mark Levinson<sup>®</sup>为每一辆雷克萨斯量身定做音响系统，创新设计的功放将失真减到最低，始终置于车内最佳位置的扬声器，为品位卓越的雷克萨斯车主呈现动感清晰的音效，完美再现艺术家所表现的音乐世界。</h5>
+	    			  	  </div>
+	    			  	</div>
+	    			  	  <div>
+	    			  	  	<img src="img/index-dropdownmenu-2-4-1121-1354x810.jpg" style="width: 100%;"/>
+	    			  	  </div>
+	    			  </div>
+	    		      <div class="history ">
+	    			  	<div class="zt">
+	    			  		<div class="zi">
+	    			  	  	<h4>环保理念</h4>
+	    			  	  	<h5>注重节约，能源效率至上，将汽车整个生命周期对环境的所有影响降至最低。</h5>
+	    			  	  </div>
+	    			  	</div>
+	    			  	  <div>
+	    			  	  	<img src="img/index-dropdownmenu-4-2-181227-3-1354x810.jpg" style="width: 100%;"/>
+	    			  	  </div>
+	    			  </div>
+	    		      <div class="history ">
+	    			  	<div class="zt">
+	    			  		<div class="zi">
+	    			  	  	<h4>概念车</h4>
+	    			  	  	<h5>任何设计风格和技术上的极大突破，均预示着L-finesse设计语言未来的发展方向及对纯粹驾驶乐趣的不懈追求。</h5>
+	    			  	  </div>
+	    			  	</div>
+	    			  	  <div>
+	    			  	  	<img src="img/index-dropdownmenu-2-5-1354x810.jpg" style="width: 100%;"/>
+	    			  	  </div>
+	    			  </div>
+	    		      <div class="history">
+	    			  	<div class="zt">
+	    			  		<div class="zi">
+	    			  	  	<h4>全球品牌活动</h4>
+	    			  	  	<h5>时刻关注有意义的创新，激发出前瞻领先的情感。</h5>
+	    			  	  </div>
+	    			  	</div>
+	    			  	  <div>
+	    			  	  	<img src="img/index-dropdownmenu-2-62-1354x810-190730.jpg" style="width: 100%;"/>
+	    			  	  </div>
+	    			  </div>
+	    		      <div class="history">
+	    			  	<div class="zt">
+	    			  		<div class="zi">
+	    			  	  	<h4>全球品牌活动</h4>
+	    			  	  	<h5>时刻关注有意义的创新，激发出前瞻领先的情感。</h5>
+	    			  	  </div>
+	    			  	</div>
+	    			  	  <div>
+	    			  	  	<img src="img/index-dropdownmenu-2-62-1354x810-190730.jpg" style="width: 100%;"/>
+	    			  	  </div>
+	    			  </div>
+	    			  <div class="history">
+	    			  	<div class="zt">
+	    			  		<div class="zi">
+	    			  	  	<h4>全球品牌活动</h4>
+	    			  	  	<h5>时刻关注有意义的创新，激发出前瞻领先的情感。</h5>
+	    			  	  </div>
+	    			  	</div>
+	    			  	  <div>
+	    			  	  	<img src="img/index-dropdownmenu-2-62-1354x810-190730.jpg" style="width: 100%;"/>
+	    			  	  </div>
+	    			  </div>
+	    			  <div class="history">
+	    			  	<div class="zt">
+	    			  		<div class="zi">
+	    			  	  	<h4>全球品牌活动</h4>
+	    			  	  	<h5>时刻关注有意义的创新，激发出前瞻领先的情感。</h5>
+	    			  	  </div>
+	    			  	</div>
+	    			  	  <div>
+	    			  	  	<img src="img/index-dropdownmenu-2-62-1354x810-190730.jpg" style="width: 100%;"/>
+	    			  	  </div>
+	    			  </div>
+	    			  <div class="history">
+	    			  	<div class="zt">
+	    			  		<div class="zi">
+	    			  	  	<h4>全球品牌活动</h4>
+	    			  	  	<h5>时刻关注有意义的创新，激发出前瞻领先的情感。</h5>
+	    			  	  </div>
+	    			  	</div>
+	    			  	  <div>
+	    			  	  	<img src="img/index-dropdownmenu-2-62-1354x810-190730.jpg" style="width: 100%;"/>
+	    			  	  </div>
+	    			  </div>
+	    		</div>
+	    	</div>
+	    </div>
+							</li>
+							<li class="zhi_hd"><a href="#">智·混动</a>
+								<div class="container hd">
+	    	<div class="row ">
+	    		<div class="col-lg-5 brand"style="height: 600px;">
+	    			<ul>
+	    				<li><a href="#">智·混动</a></li>
+	    			</ul>
+	    		</div>
+	    		<div class="col-lg-7 jieshao">
+	    			  <div class="history">
+	    			  	<div class="zt">
+	    			  		<div class="zi">
+	    			  	  	<h4>智·混动</h4>
+	    			  	  	<h5>智，在于兼顾自我与社会；在于坐享时代的巅峰；在于深感速度的激情；在于纯净澎湃的动力。</h5>
+	    			  	  </div>
+	    			  	</div>
+	    			  	  <div>
+	    			  	  	<img src="img/index-dropdownmenu-4-2-190515-1354x810.jpg" style="width: 100%;"/>
+	    			  	  </div>
+	    			  </div>
+	    			  </div>
+	    		</div>
+	    	</div>
+							</li>
+							<li class="f_gn"><a href="#">F高性能系列</a>
+								 <div class="container gn">
+	    	<div class="row zong">
+	    		<div class="col-lg-5 brand"style="height: 600px;">
+	    			<ul>
+	    				<li><a href="#">F高性能系列</a></li>
+	    			</ul>
+	    		</div>
+	    		<div class="col-lg-7 jieshao">
+	    			  <div class="history">
+	    			  	<div class="zt">
+	    			  		<div class="zi">
+	    			  	  	<h4>F高性能系列</h4>
+	    			  	  	<h5>F的精神，由赛道传奇延续至平素驾控。无论何时何地，酣畅的驾控快感从无休止。。</h5>
+	    			  	  </div>
+	    			  	</div>
+	    			  	  <div>
+	    			  	  	<img src="img/index-dropdownmenu-5-1-1354x810.jpg" style="width: 100%;"/>
+	    			  	  </div>
+	    			  </div>
+	    			  </div>
+	    		</div>
+	    	</div>
+							</li>
+							<li class="c_cz"><a href="#">车主服务</a>
+								<div class="container cz">
+	    	<div class="row zong">
+	    		<div class="col-lg-5 brand"style="height: 600px;">
+	    			<ul>
+	    				<li><a href="#">售后服务</a></li>
+	    				<li><a href="#">e-LEXUS CLUB智能手机应用</a></li>
+	    				<li><a href="#">雷克萨斯智能副驾G-BOOK</a></li>
+	    				<li><a href="#">雷克萨斯手机互联</a></li>
+	    				<li><a href="#">雷克萨斯汽车精品</a></li>
+	    				<li><a href="#">雷克萨斯生活精品</a></li>
+	    				<li><a href="#">雷克萨斯顾客常见问与答</a></li>
+	    				
+	    			</ul>
+	    		</div>
+	    		<div class="col-lg-7 jieshao">
+	    			  <div class="history active ">
+	    			  	<div class="zt">
+	    			  		<div class="zi">
+	    			  	  	<h4>售后服务</h4>
+	    			  	  	<h5>雷克萨斯售后服务，全心投入，只为您全心满意。；</h5>
+	    			  	  </div>
+	    			  	</div>
+	    			  	  <div>
+	    			  	  	<img src="img/index-dropdownmenu-3-1-1354x810.jpg" style="width: 100%;"/>
+	    			  	  </div>
+	    			  </div>
+	    		      <div class="history ">
+	    			  	<div class="zt">
+	    			  		<div class="zi">
+	    			  	  	<h4>e-LEXUS CLUB智能手机应用</h4>
+	    			  	  	<h5>
+e-LEXUS CLUB智能手机应用作为雷克萨斯官方手机应用程序，覆盖所有雷克萨斯车辆。雷克萨斯车主可以通过本应用程序随时随地享受雷克萨斯尊崇服务，畅享智能驾车新境界。</h5>
+	    			  	  </div>
+	    			  	</div>
+	    			  	  <div>
+	    			  	  	<img src="img/index-dropdownmenu-3-2-1354x810.jpg" style="width: 100%;"/>
+	    			  	  </div>
+	    			  </div>
+	    		      <div class="history ">
+	    			  	<div class="zt">
+	    			  		<div class="zi">
+	    			  	  	<h4>雷克萨斯手机互联</h4>
+	    			  	  	<h5>
+通过雷克萨斯手机互联功能，可以将您的手机应用程序*画面投射到车载屏幕，在车载机上自如操控导航、音乐，尽享科技带来的便利.</h5>
+	    			  	  </div>
+	    			  	</div>
+	    			  	  <div>
+	    			  	  	<img src="img/index-dropdownmenu-3-3-0820-1354x810.jpg" style="width: 100%;"/>
+	    			  	  </div>
+	    			  </div>
+	    		      <div class="history ">
+	    			  	<div class="zt">
+	    			  		<div class="zi">
+	    			  	  	<h4>雷克萨斯汽车精品</h4>
+	    			  	  	<h5>雷克萨斯家族以兼·容之道，设计新环保理念的概念车，科技与环保相融相生</h5>
+	    			  	  </div>
+	    			  	</div>
+	    			  	  <div>
+	    			  	  	<img src="img/index-dropdownmenu-3-5-1122-1354x810.jpg" style="width: 100%;"/>
+	    			  	  </div>
+	    			  </div>
+	    		      <div class="history ">
+	    			  	<div class="zt">
+	    			  		<div class="zi">
+	    			  	  	<h4>雷克萨斯生活精品</h4>
+	    			  	  	<h5>Mark Levinson<sup>®</sup>为每一辆雷克萨斯量身定做音响系统，创新设计的功放将失真减到最低，始终置于车内最佳位置的扬声器。</h5>
+	    			  	  </div>
+	    			  	</div>
+	    			  	  <div>
+	    			  	  	<img src="img/index-dropdownmenu-2-5-1354x810.jpg" style="width: 100%;"/>
+	    			  	  </div>
+	    			  </div>
+	    		      <div class="history ">
+	    			  	<div class="zt">
+	    			  		<div class="zi">
+	    			  	  	<h4>雷克萨斯顾客常见问与答</h4>
+	    			  	  	<h5>请您先浏览顾客常见问与答。如仍无法解答您的疑问，可点击页面下方的在线咨询按钮获得帮助。</h5>
+	    			  	  </div>
+	    			  	</div>
+	    			  	  <div>
+	    			  	  	<img src="img/index-dropdownmenu-3-4-180316-1354x810.jpg" style="width: 100%;"/>
+	    			  	  </div>
+	    			  </div>
+	    			  
+	    			  <div class="history ">
+	    			  	<div class="zt">
+	    			  		<div class="zi">
+	    			  	  	<h4>雷克萨斯生活精品</h4>
+	    			  	  	<h5>Mark Levinson<sup>®</sup>为每一辆雷克萨斯量身定做音响系统，创新设计的功放将失真减到最低，始终置于车内最佳位置的扬声器。</h5>
+	    			  	  </div>
+	    			  	</div>
+	    			  	  <div>
+	    			  	  	<img src="img/index-dropdownmenu-5-1-1354x810.jpg" style="width: 100%;"/>
+	    			  	  </div>
+	    			  </div>
+	    		</div>
+	    	</div>
+	    </div>
+							</li>
+							<li class="x_xw"><a href="#">新闻资讯</a>
+								<div class="container xw">
+	    	<div class="row zong">
+	    		<div class="col-lg-5 brand"style="height: 600px;">
+	    			<ul>
+	    				<li><a href="#">新闻咨询</a></li>
+	    			</ul>
+	    		</div>
+	    		<div class="col-lg-7 jieshao">
+	    			  <div class="history">
+	    			  	<div class="zt">
+	    			  		<div class="zi">
+	    			  	  	<h4>新闻资讯</h4>
+	    			  	  	<h5>在这里您可以浏览关于雷克萨斯的所有资讯及优惠活动</h5>
+	    			  	  </div>
+	    			  	</div>
+	    			  	  <div>
+	    			  	  	<img src="img/index-dropdownmenu-6-1-1354x810.jpg" style="width: 100%;"/>
+	    			  	  </div>
+	    			  </div>
+	    		</div>
+	    	</div>
+	    </div>
+							</li>
+							<li><a href="#">查询经销商</a></li>
+							<li><a href="#">预约试驾</a></li>
+							<li><a href="#"><span class="glyphicon glyphicon-star-empty"></span></a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</nav>
+	    	<nav class="navbar navbar-default col-md-12  hidden-lg hidden-sm hidden-xs">
+			<div class="container navbar_top">
+				<div class="container-fluid ">
+					<div class="navbar-header">
+						<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+						<a class="navbar-brand" href="#"><img src="img/logo1.png" / style="width: 268px;height: 25px;"></a>
+					</div>
+					<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+						<ul class="nav navbar-nav navbar-right">
+							<li class="appear"><a href="#">车型总览</a>
+								<div class="container top">
+	    	<div class="row drop-down box">
+	    		<div class="col-lg-7 left" style=" height:700px;padding: 0;">
+	    			<div class="car">
+	    				<div class="col-lg-3 box">
+	    					<h4 style="text-align: center;margin-top: 20px;">CT</h4>
+	    					<img class="lexus"  src="img/ct-model-400x160.png" style="width: 165px;"/>
+	    					<p style="text-align: center;margin: 0px;">紧凑型豪华两厢车</p>
+	    				</div>
+	    			</div>
+	    		    <div class="car">
+	    		    	<div class="col-lg-3">
+	    		    		<h4 style="text-align: center;margin: 0;margin-top: 20px;">IS</h4>
+	    					<img class="lexus" src="img/is-model-400x160.png" style="width: 165px;"/>
+	    					<p style="text-align: center;margin: 0px;">中型豪华运动轿车</p>
+	    		    	</div>
+	    		    	<div class="col-lg-3">
+	    		    		<h4 style="text-align: center;margin: 0;margin-top: 20px;">ES</h4>
+	    					<img class="lexus" src="img/es-model-400x160.png" style="width: 165px;"/>
+	    					<p style="text-align: center;margin: 0px;">中大型豪华行政级轿车</p>
+	    		    	</div>
+	    		    	<div class="col-lg-3">
+	    		    		<h4 style="text-align: center;margin: 0;margin-top: 20px;">GS</h4>
+	    					<img class="lexus" src="img/is-model-400x160.png" style="width: 165px;"/>
+	    					<p style="text-align: center;margin: 0px;">中大型豪华运动轿车</p></div>
+	    		    	<div class="col-lg-3">
+	    		    		<h4 style="text-align: center;margin: 0;margin-top: 20px;">LS</h4>
+	    					<img class="lexus" src="img/ls-model-400x160.png" style="width: 165px;"/>
+	    					<p style="text-align: center;margin: 0px;">旗舰级豪华轿车</p></div>
+	    		    	</div>
+	    		    <div class="car">
+	    		    	<div class="col-lg-3">
+	    		    		<h4 style="text-align: center;margin: 0;margin-top: 20px;">UX</h4>
+	    					<img class="lexus" src="img/ux-model-400x160.png" style="width: 165px;"/>
+	    					<p style="text-align: center;margin: 0px;">豪华都市SUV</p>
+	    		    	</div>
+	    		    	<div class="col-lg-3">
+	    		    		<h4 style="text-align: center;margin: 0;margin-top: 20px;">NX</h4>
+	    					<img class="lexus" src="img/nx-model-400x160.png" style="width: 165px;"/>
+	    					<p style="text-align: center;margin: 0px;">中型豪华SUV</p>
+	    		    	</div>
+	    		    	<div class="col-lg-3">
+	    		    		<h4 style="text-align: center;margin: 0;margin-top: 20px;">RX</h4>
+	    					<img class="lexus" src="img/rx-model-400x160.png" style="width: 165px;"/>
+	    					<p style="text-align: center;margin: 0px;">中大型豪华SUV</p>
+	    		    	</div>
+	    		    	<div class="col-lg-3">
+	    		    		<h4 style="text-align: center;margin: 0;margin-top: 20px;">LX</h4>
+	    					<img class="lexus" src="img/lx-model-400x160.png" style="width: 165px;"/>
+	    					<p style="text-align: center;margin: 0px;">中大型豪华SUV</p>
+	    		    	</div>
+	    		    </div>
+	    		    <div class="car">
+	    		    	<div class="col-lg-3">
+	    		    		<h4 style="text-align: center;margin: 0;margin-top: 20px;">RC</h4>
+	    					<img class="lexus" src="img/rc-model-400x160.png" style="width: 165px;"/>
+	    					<p style="text-align: center;margin: 0px;">中型豪华轿跑车</p>
+	    		    	</div>
+	    		    	<div class="col-lg-3">
+	    		    		<h4 style="text-align: center;margin: 0;margin-top: 20px;">LC</h4>
+	    					<img class="lexus"  src="img/lc-model-400x160.png" style="width: 165px;"/>
+	    					<p style="text-align: center;margin: 0px;">旗舰豪华GT跑车</p>
+	    		    	</div>
+	    		    </div>
+	    		    <div class="car">
+	    		    	<div class="col-lg-3">
+	    		    		<h4 style="text-align: center;margin: 0;margin-top: 20px;">YACHT</h4>
+	    					<img  class="lexus"src="img/yacht-model-400x160.png" style="width: 175px;"/>
+	    					<p style="text-align: center;margin: 0px;">豪华游艇</p>
+	    		    	</div>
+	    		    </div>
+	    		</div>
+	    		    <div class="col-lg-5 reght" style=" height:700px;">
+	    		    	<div class="cx" style="position: relative;">
+	    		    		<img src="img/index-dropdownmenu_new-1-1-920x560.jpg"/ style="width: 100%;"><span style="position: absolute;top: 35px;left:180px;color: white;font-size: 20px;">车型筛选</span></div>
+	    		    	<div class="col-lg-6 yg" style="padding: 2px;">
+	    		    		<div><img src="img/bottomImg-190829.jpg" style="width: 100%;"/><span style="position: absolute;top: 35px;left:70px;color: white;font-size: 20px;">新车预告</span></div>
+	    		    	</div>
+	    		    	<div class="col-lg-6 jr" style="padding: 2px;">
+	    		    		<div><img src="img/index-dropdownmenu_new-1-3-460x560.jpg" style="width: 100%;"/>
+	    		    		<span style="position: absolute;top: 35px;left:70px;color: white;font-size: 20px;">金融服务</span></div>
+	    		    	</div>
+	    		    </div>
+	    		</div>
+	    	</div>
+							</li>
+							<li class="tiandi"><a href="#">品牌天地</a>
+								<div class="container pinpai">
+	    	<div class="row zong">
+	    		<div class="col-lg-5 brand"style="height: 600px;">
+	    			<ul>
+	    				<li><a href="#">品牌历史</a>	    				</li>
+	    				<li><a href="#">匠人匠心</a></li>
+	    				<li><a href="#">设计理念</a></li>
+	    				<li><a href="#">兼容之道</a></li>
+	    				<li><a href="#">至纯之音</a></li>
+	    				<li><a href="#">环保理念</a></li>
+	    				<li><a href="#">概念车</a></li>
+	    				<li><a href="#">全球品牌活动</a></li>
+	    				<li style="border-left:1px solid #ADADAD;"> <span style="border-bottom:1px solid #ADADAD;"> &nbsp&nbsp&nbsp&nbsp&nbsp</span><a href="#">雷克萨斯品牌杂志</a></li>
+	    				<li style="border-left:1px solid #ADADAD;"><span style="border-bottom:1px solid #ADADAD;"> &nbsp&nbsp&nbsp&nbsp&nbsp</span><a href="#">雷克萨斯设计大奖</a></li>
+	    				<li  style="border-left:1px solid #ADADAD;"><span style="border-bottom:1px solid #ADADAD;"> &nbsp&nbsp&nbsp&nbsp&nbsp</span><a href="#">雷克萨斯品牌体验空间INTERSECT</a></li>
+	    				<li  style="border-left:1px solid #ADADAD;"><span style="border-bottom:1px solid #ADADAD;"> &nbsp&nbsp&nbsp&nbsp&nbsp</span><a href="#">雷克萨斯全球微电影</a></li>
+	    			</ul>
+	    		</div>
+	    		<div class="col-lg-7 jieshao">
+	    			  <div class="history active ">
+	    			  	<div class="zt">
+	    			  		<div class="zi">
+	    			  	  	<h4>品牌历史</h4>
+	    			  	  	<h5>回眸岁月，雷克萨斯前行路上成就不止；</h5>
+	    			  	  	<h5>所有的一切，都诉说着雷克萨斯历日旷久斐然业绩，更预言者品牌前进的方向。</h5>
+	    			  	  </div>
+	    			  	</div>
+	    			  	  <div>
+	    			  	  	<img src="img/index-dropdownmenu-2-1-1354x810.jpg" style="width: 100%;"/>
+	    			  	  </div>
+	    			  </div>
+	    		      <div class="history ">
+	    			  	<div class="zt">
+	    			  		<div class="zi">
+	    			  	  	<h4>匠人匠心</h4>
+	    			  	  	<h5>雷克萨斯专注将新产品，酒糟每一个极致细节，从看到他到驾驶，都能感受到人车合一的感觉</h5>
+	    			  	  </div>
+	    			  	</div>
+	    			  	  <div>
+	    			  	  	<img src="img/index-dropdownmenu-2-2-1354x810.jpg" style="width: 100%;"/>
+	    			  	  </div>
+	    			  </div>
+	    		      <div class="history ">
+	    			  	<div class="zt">
+	    			  		<div class="zi">
+	    			  	  	<h4>设计理念</h4>
+	    			  	  	<h5>L-lexus与陈妙是雷克萨斯的全新设计理念</h5>
+	    			  	  </div>
+	    			  	</div>
+	    			  	  <div>
+	    			  	  	<img src="img/index-dropdownmenu-2-3-1354x810.jpg" style="width: 100%;"/>
+	    			  	  </div>
+	    			  </div>
+	    		      <div class="history ">
+	    			  	<div class="zt">
+	    			  		<div class="zi">
+	    			  	  	<h4>兼·容之道</h4>
+	    			  	  	<h5>雷克萨斯家族以兼·容之道，设计新环保理念的概念车，科技与环保相融相生</h5>
+	    			  	  </div>
+	    			  	</div>
+	    			  	  <div>
+	    			  	  	<img src="img/index-dropdownmenu-4-2-190515-1354x810.jpg" style="width: 100%;"/>
+	    			  	  </div>
+	    			  </div>
+	    		      <div class="history ">
+	    			  	<div class="zt">
+	    			  		<div class="zi">
+	    			  	  	<h4>至纯之音</h4>
+	    			  	  	<h5>Mark Levinson<sup>®</sup>为每一辆雷克萨斯量身定做音响系统，创新设计的功放将失真减到最低，始终置于车内最佳位置的扬声器，为品位卓越的雷克萨斯车主呈现动感清晰的音效，完美再现艺术家所表现的音乐世界。</h5>
+	    			  	  </div>
+	    			  	</div>
+	    			  	  <div>
+	    			  	  	<img src="img/index-dropdownmenu-2-4-1121-1354x810.jpg" style="width: 100%;"/>
+	    			  	  </div>
+	    			  </div>
+	    		      <div class="history ">
+	    			  	<div class="zt">
+	    			  		<div class="zi">
+	    			  	  	<h4>环保理念</h4>
+	    			  	  	<h5>注重节约，能源效率至上，将汽车整个生命周期对环境的所有影响降至最低。</h5>
+	    			  	  </div>
+	    			  	</div>
+	    			  	  <div>
+	    			  	  	<img src="img/index-dropdownmenu-4-2-181227-3-1354x810.jpg" style="width: 100%;"/>
+	    			  	  </div>
+	    			  </div>
+	    		      <div class="history ">
+	    			  	<div class="zt">
+	    			  		<div class="zi">
+	    			  	  	<h4>概念车</h4>
+	    			  	  	<h5>任何设计风格和技术上的极大突破，均预示着L-finesse设计语言未来的发展方向及对纯粹驾驶乐趣的不懈追求。</h5>
+	    			  	  </div>
+	    			  	</div>
+	    			  	  <div>
+	    			  	  	<img src="img/index-dropdownmenu-2-5-1354x810.jpg" style="width: 100%;"/>
+	    			  	  </div>
+	    			  </div>
+	    		      <div class="history">
+	    			  	<div class="zt">
+	    			  		<div class="zi">
+	    			  	  	<h4>全球品牌活动</h4>
+	    			  	  	<h5>时刻关注有意义的创新，激发出前瞻领先的情感。</h5>
+	    			  	  </div>
+	    			  	</div>
+	    			  	  <div>
+	    			  	  	<img src="img/index-dropdownmenu-2-62-1354x810-190730.jpg" style="width: 100%;"/>
+	    			  	  </div>
+	    			  </div>
+	    		      <div class="history">
+	    			  	<div class="zt">
+	    			  		<div class="zi">
+	    			  	  	<h4>全球品牌活动</h4>
+	    			  	  	<h5>时刻关注有意义的创新，激发出前瞻领先的情感。</h5>
+	    			  	  </div>
+	    			  	</div>
+	    			  	  <div>
+	    			  	  	<img src="img/index-dropdownmenu-2-62-1354x810-190730.jpg" style="width: 100%;"/>
+	    			  	  </div>
+	    			  </div>
+	    			  <div class="history">
+	    			  	<div class="zt">
+	    			  		<div class="zi">
+	    			  	  	<h4>全球品牌活动</h4>
+	    			  	  	<h5>时刻关注有意义的创新，激发出前瞻领先的情感。</h5>
+	    			  	  </div>
+	    			  	</div>
+	    			  	  <div>
+	    			  	  	<img src="img/index-dropdownmenu-2-62-1354x810-190730.jpg" style="width: 100%;"/>
+	    			  	  </div>
+	    			  </div>
+	    			  <div class="history">
+	    			  	<div class="zt">
+	    			  		<div class="zi">
+	    			  	  	<h4>全球品牌活动</h4>
+	    			  	  	<h5>时刻关注有意义的创新，激发出前瞻领先的情感。</h5>
+	    			  	  </div>
+	    			  	</div>
+	    			  	  <div>
+	    			  	  	<img src="img/index-dropdownmenu-2-62-1354x810-190730.jpg" style="width: 100%;"/>
+	    			  	  </div>
+	    			  </div>
+	    			  <div class="history">
+	    			  	<div class="zt">
+	    			  		<div class="zi">
+	    			  	  	<h4>全球品牌活动</h4>
+	    			  	  	<h5>时刻关注有意义的创新，激发出前瞻领先的情感。</h5>
+	    			  	  </div>
+	    			  	</div>
+	    			  	  <div>
+	    			  	  	<img src="img/index-dropdownmenu-2-62-1354x810-190730.jpg" style="width: 100%;"/>
+	    			  	  </div>
+	    			  </div>
+	    		</div>
+	    	</div>
+	    </div>
+							</li>
+							<li class="zhi_hd"><a href="#">智·混动</a>
+								<div class="container hd">
+	    	<div class="row ">
+	    		<div class="col-lg-5 brand"style="height: 600px;">
+	    			<ul>
+	    				<li><a href="#">智·混动</a></li>
+	    			</ul>
+	    		</div>
+	    		<div class="col-lg-7 jieshao">
+	    			  <div class="history">
+	    			  	<div class="zt">
+	    			  		<div class="zi">
+	    			  	  	<h4>智·混动</h4>
+	    			  	  	<h5>智，在于兼顾自我与社会；在于坐享时代的巅峰；在于深感速度的激情；在于纯净澎湃的动力。</h5>
+	    			  	  </div>
+	    			  	</div>
+	    			  	  <div>
+	    			  	  	<img src="img/index-dropdownmenu-4-2-190515-1354x810.jpg" style="width: 100%;"/>
+	    			  	  </div>
+	    			  </div>
+	    			  </div>
+	    		</div>
+	    	</div>
+							</li>
+							<li class="f_gn"><a href="#">F高性能系列</a>
+								 <div class="container gn">
+	    	<div class="row zong">
+	    		<div class="col-lg-5 brand"style="height: 600px;">
+	    			<ul>
+	    				<li><a href="#">F高性能系列</a></li>
+	    			</ul>
+	    		</div>
+	    		<div class="col-lg-7 jieshao">
+	    			  <div class="history">
+	    			  	<div class="zt">
+	    			  		<div class="zi">
+	    			  	  	<h4>F高性能系列</h4>
+	    			  	  	<h5>F的精神，由赛道传奇延续至平素驾控。无论何时何地，酣畅的驾控快感从无休止。。</h5>
+	    			  	  </div>
+	    			  	</div>
+	    			  	  <div>
+	    			  	  	<img src="img/index-dropdownmenu-5-1-1354x810.jpg" style="width: 100%;"/>
+	    			  	  </div>
+	    			  </div>
+	    			  </div>
+	    		</div>
+	    	</div>
+							</li>
+							<li class="c_cz"><a href="#">车主服务</a>
+								<div class="container cz">
+	    	<div class="row zong">
+	    		<div class="col-lg-5 brand"style="height: 600px;">
+	    			<ul>
+	    				<li><a href="#">售后服务</a></li>
+	    				<li><a href="#">e-LEXUS CLUB智能手机应用</a></li>
+	    				<li><a href="#">雷克萨斯智能副驾G-BOOK</a></li>
+	    				<li><a href="#">雷克萨斯手机互联</a></li>
+	    				<li><a href="#">雷克萨斯汽车精品</a></li>
+	    				<li><a href="#">雷克萨斯生活精品</a></li>
+	    				<li><a href="#">雷克萨斯顾客常见问与答</a></li>
+	    				
+	    			</ul>
+	    		</div>
+	    		<div class="col-lg-7 jieshao">
+	    			  <div class="history active ">
+	    			  	<div class="zt">
+	    			  		<div class="zi">
+	    			  	  	<h4>售后服务</h4>
+	    			  	  	<h5>雷克萨斯售后服务，全心投入，只为您全心满意。；</h5>
+	    			  	  </div>
+	    			  	</div>
+	    			  	  <div>
+	    			  	  	<img src="img/index-dropdownmenu-3-1-1354x810.jpg" style="width: 100%;"/>
+	    			  	  </div>
+	    			  </div>
+	    		      <div class="history ">
+	    			  	<div class="zt">
+	    			  		<div class="zi">
+	    			  	  	<h4>e-LEXUS CLUB智能手机应用</h4>
+	    			  	  	<h5>
+e-LEXUS CLUB智能手机应用作为雷克萨斯官方手机应用程序，覆盖所有雷克萨斯车辆。雷克萨斯车主可以通过本应用程序随时随地享受雷克萨斯尊崇服务，畅享智能驾车新境界。</h5>
+	    			  	  </div>
+	    			  	</div>
+	    			  	  <div>
+	    			  	  	<img src="img/index-dropdownmenu-3-2-1354x810.jpg" style="width: 100%;"/>
+	    			  	  </div>
+	    			  </div>
+	    		      <div class="history ">
+	    			  	<div class="zt">
+	    			  		<div class="zi">
+	    			  	  	<h4>雷克萨斯手机互联</h4>
+	    			  	  	<h5>
+通过雷克萨斯手机互联功能，可以将您的手机应用程序*画面投射到车载屏幕，在车载机上自如操控导航、音乐，尽享科技带来的便利.</h5>
+	    			  	  </div>
+	    			  	</div>
+	    			  	  <div>
+	    			  	  	<img src="img/index-dropdownmenu-3-3-0820-1354x810.jpg" style="width: 100%;"/>
+	    			  	  </div>
+	    			  </div>
+	    		      <div class="history ">
+	    			  	<div class="zt">
+	    			  		<div class="zi">
+	    			  	  	<h4>雷克萨斯汽车精品</h4>
+	    			  	  	<h5>雷克萨斯家族以兼·容之道，设计新环保理念的概念车，科技与环保相融相生</h5>
+	    			  	  </div>
+	    			  	</div>
+	    			  	  <div>
+	    			  	  	<img src="img/index-dropdownmenu-3-5-1122-1354x810.jpg" style="width: 100%;"/>
+	    			  	  </div>
+	    			  </div>
+	    		      <div class="history ">
+	    			  	<div class="zt">
+	    			  		<div class="zi">
+	    			  	  	<h4>雷克萨斯生活精品</h4>
+	    			  	  	<h5>Mark Levinson<sup>®</sup>为每一辆雷克萨斯量身定做音响系统，创新设计的功放将失真减到最低，始终置于车内最佳位置的扬声器。</h5>
+	    			  	  </div>
+	    			  	</div>
+	    			  	  <div>
+	    			  	  	<img src="img/index-dropdownmenu-2-5-1354x810.jpg" style="width: 100%;"/>
+	    			  	  </div>
+	    			  </div>
+	    		      <div class="history ">
+	    			  	<div class="zt">
+	    			  		<div class="zi">
+	    			  	  	<h4>雷克萨斯顾客常见问与答</h4>
+	    			  	  	<h5>请您先浏览顾客常见问与答。如仍无法解答您的疑问，可点击页面下方的在线咨询按钮获得帮助。</h5>
+	    			  	  </div>
+	    			  	</div>
+	    			  	  <div>
+	    			  	  	<img src="img/index-dropdownmenu-3-4-180316-1354x810.jpg" style="width: 100%;"/>
+	    			  	  </div>
+	    			  </div>
+	    			  
+	    			  <div class="history ">
+	    			  	<div class="zt">
+	    			  		<div class="zi">
+	    			  	  	<h4>雷克萨斯生活精品</h4>
+	    			  	  	<h5>Mark Levinson<sup>®</sup>为每一辆雷克萨斯量身定做音响系统，创新设计的功放将失真减到最低，始终置于车内最佳位置的扬声器。</h5>
+	    			  	  </div>
+	    			  	</div>
+	    			  	  <div>
+	    			  	  	<img src="img/index-dropdownmenu-5-1-1354x810.jpg" style="width: 100%;"/>
+	    			  	  </div>
+	    			  </div>
+	    		</div>
+	    	</div>
+	    </div>
+							</li>
+							<li class="x_xw"><a href="#">新闻资讯</a>
+								<div class="container xw">
+	    	<div class="row zong">
+	    		<div class="col-lg-5 brand"style="height: 600px;">
+	    			<ul>
+	    				<li><a href="#">新闻咨询</a></li>
+	    			</ul>
+	    		</div>
+	    		<div class="col-lg-7 jieshao">
+	    			  <div class="history">
+	    			  	<div class="zt">
+	    			  		<div class="zi">
+	    			  	  	<h4>新闻资讯</h4>
+	    			  	  	<h5>在这里您可以浏览关于雷克萨斯的所有资讯及优惠活动</h5>
+	    			  	  </div>
+	    			  	</div>
+	    			  	  <div>
+	    			  	  	<img src="img/index-dropdownmenu-6-1-1354x810.jpg" style="width: 100%;"/>
+	    			  	  </div>
+	    			  </div>
+	    		</div>
+	    	</div>
+	    </div>
+							</li>
+							<li><a href="#"><span class="glyphicon glyphicon-star-empty"></span></a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</nav>
+	    <nav class="navbar navbar-default col-sm-12  hidden-lg hidden-xs hidden-md" style="min-width: 750px;">
+			<div class="container navbar_top">
+				<div class="container-fluid ">
+					<div class="navbar-header">
+						<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+						<a class="navbar-brand" href="#"><img src="img/logo1.png" / style="width: 268px;height: 25px;"></a>
+					</div>
+					<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+						<ul class="nav navbar-nav navbar-right">
+							
+							<li class="tiandi"><a href="#">品牌天地</a>
+								<div class="container pinpai">
+	    	<div class="row zong">
+	    		<div class="col-lg-5 col-sm-5 col-xs-5 brand"style="height: 600px;">
+	    			<ul>
+	    				<li><a href="#">品牌历史</a>	    				</li>
+	    				<li><a href="#">匠人匠心</a></li>
+	    				<li><a href="#">设计理念</a></li>
+	    				<li><a href="#">兼容之道</a></li>
+	    				<li><a href="#">至纯之音</a></li>
+	    				<li><a href="#">环保理念</a></li>
+	    				<li><a href="#">概念车</a></li>
+	    				<li><a href="#">全球品牌活动</a></li>
+	    				<li style="border-left:1px solid #ADADAD;"> <span style="border-bottom:1px solid #ADADAD;"> &nbsp&nbsp&nbsp&nbsp&nbsp</span><a href="#">雷克萨斯品牌杂志</a></li>
+	    				<li style="border-left:1px solid #ADADAD;"><span style="border-bottom:1px solid #ADADAD;"> &nbsp&nbsp&nbsp&nbsp&nbsp</span><a href="#">雷克萨斯设计大奖</a></li>
+	    				<li  style="border-left:1px solid #ADADAD;"><span style="border-bottom:1px solid #ADADAD;"> &nbsp&nbsp&nbsp&nbsp&nbsp</span><a href="#">雷克萨斯品牌体验空间INTERSECT</a></li>
+	    				<li  style="border-left:1px solid #ADADAD;"><span style="border-bottom:1px solid #ADADAD;"> &nbsp&nbsp&nbsp&nbsp&nbsp</span><a href="#">雷克萨斯全球微电影</a></li>
+	    			</ul>
+	    		</div>
+	    		<div class="col-lg-7 col-sm-7 col-xs-7 jieshao">
+	    			  <div class="history active ">
+	    			  	<div class="zt">
+	    			  		<div class="zi">
+	    			  	  	<h4>品牌历史</h4>
+	    			  	  	<h5>回眸岁月，雷克萨斯前行路上成就不止；</h5>
+	    			  	  	<h5>所有的一切，都诉说着雷克萨斯历日旷久斐然业绩，更预言者品牌前进的方向。</h5>
+	    			  	  </div>
+	    			  	</div>
+	    			  	  <div>
+	    			  	  	<img src="img/index-dropdownmenu-2-1-1354x810.jpg" style="width: 100%;"/>
+	    			  	  </div>
+	    			  </div>
+	    		      <div class="history ">
+	    			  	<div class="zt">
+	    			  		<div class="zi">
+	    			  	  	<h4>匠人匠心</h4>
+	    			  	  	<h5>雷克萨斯专注将新产品，酒糟每一个极致细节，从看到他到驾驶，都能感受到人车合一的感觉</h5>
+	    			  	  </div>
+	    			  	</div>
+	    			  	  <div>
+	    			  	  	<img src="img/index-dropdownmenu-2-2-1354x810.jpg" style="width: 100%;"/>
+	    			  	  </div>
+	    			  </div>
+	    		      <div class="history ">
+	    			  	<div class="zt">
+	    			  		<div class="zi">
+	    			  	  	<h4>设计理念</h4>
+	    			  	  	<h5>L-lexus与陈妙是雷克萨斯的全新设计理念</h5>
+	    			  	  </div>
+	    			  	</div>
+	    			  	  <div>
+	    			  	  	<img src="img/index-dropdownmenu-2-3-1354x810.jpg" style="width: 100%;"/>
+	    			  	  </div>
+	    			  </div>
+	    		      <div class="history ">
+	    			  	<div class="zt">
+	    			  		<div class="zi">
+	    			  	  	<h4>兼·容之道</h4>
+	    			  	  	<h5>雷克萨斯家族以兼·容之道，设计新环保理念的概念车，科技与环保相融相生</h5>
+	    			  	  </div>
+	    			  	</div>
+	    			  	  <div>
+	    			  	  	<img src="img/index-dropdownmenu-4-2-190515-1354x810.jpg" style="width: 100%;"/>
+	    			  	  </div>
+	    			  </div>
+	    		      <div class="history ">
+	    			  	<div class="zt">
+	    			  		<div class="zi">
+	    			  	  	<h4>至纯之音</h4>
+	    			  	  	<h5>Mark Levinson<sup>®</sup>为每一辆雷克萨斯量身定做音响系统，创新设计的功放将失真减到最低，始终置于车内最佳位置的扬声器，为品位卓越的雷克萨斯车主呈现动感清晰的音效，完美再现艺术家所表现的音乐世界。</h5>
+	    			  	  </div>
+	    			  	</div>
+	    			  	  <div>
+	    			  	  	<img src="img/index-dropdownmenu-2-4-1121-1354x810.jpg" style="width: 100%;"/>
+	    			  	  </div>
+	    			  </div>
+	    		      <div class="history ">
+	    			  	<div class="zt">
+	    			  		<div class="zi">
+	    			  	  	<h4>环保理念</h4>
+	    			  	  	<h5>注重节约，能源效率至上，将汽车整个生命周期对环境的所有影响降至最低。</h5>
+	    			  	  </div>
+	    			  	</div>
+	    			  	  <div>
+	    			  	  	<img src="img/index-dropdownmenu-4-2-181227-3-1354x810.jpg" style="width: 100%;"/>
+	    			  	  </div>
+	    			  </div>
+	    		      <div class="history ">
+	    			  	<div class="zt">
+	    			  		<div class="zi">
+	    			  	  	<h4>概念车</h4>
+	    			  	  	<h5>任何设计风格和技术上的极大突破，均预示着L-finesse设计语言未来的发展方向及对纯粹驾驶乐趣的不懈追求。</h5>
+	    			  	  </div>
+	    			  	</div>
+	    			  	  <div>
+	    			  	  	<img src="img/index-dropdownmenu-2-5-1354x810.jpg" style="width: 100%;"/>
+	    			  	  </div>
+	    			  </div>
+	    		      <div class="history">
+	    			  	<div class="zt">
+	    			  		<div class="zi">
+	    			  	  	<h4>全球品牌活动</h4>
+	    			  	  	<h5>时刻关注有意义的创新，激发出前瞻领先的情感。</h5>
+	    			  	  </div>
+	    			  	</div>
+	    			  	  <div>
+	    			  	  	<img src="img/index-dropdownmenu-2-62-1354x810-190730.jpg" style="width: 100%;"/>
+	    			  	  </div>
+	    			  </div>
+	    		      <div class="history">
+	    			  	<div class="zt">
+	    			  		<div class="zi">
+	    			  	  	<h4>全球品牌活动</h4>
+	    			  	  	<h5>时刻关注有意义的创新，激发出前瞻领先的情感。</h5>
+	    			  	  </div>
+	    			  	</div>
+	    			  	  <div>
+	    			  	  	<img src="img/index-dropdownmenu-2-62-1354x810-190730.jpg" style="width: 100%;"/>
+	    			  	  </div>
+	    			  </div>
+	    			  <div class="history">
+	    			  	<div class="zt">
+	    			  		<div class="zi">
+	    			  	  	<h4>全球品牌活动</h4>
+	    			  	  	<h5>时刻关注有意义的创新，激发出前瞻领先的情感。</h5>
+	    			  	  </div>
+	    			  	</div>
+	    			  	  <div>
+	    			  	  	<img src="img/index-dropdownmenu-2-62-1354x810-190730.jpg" style="width: 100%;"/>
+	    			  	  </div>
+	    			  </div>
+	    			  <div class="history">
+	    			  	<div class="zt">
+	    			  		<div class="zi">
+	    			  	  	<h4>全球品牌活动</h4>
+	    			  	  	<h5>时刻关注有意义的创新，激发出前瞻领先的情感。</h5>
+	    			  	  </div>
+	    			  	</div>
+	    			  	  <div>
+	    			  	  	<img src="img/index-dropdownmenu-2-62-1354x810-190730.jpg" style="width: 100%;"/>
+	    			  	  </div>
+	    			  </div>
+	    			  <div class="history">
+	    			  	<div class="zt">
+	    			  		<div class="zi">
+	    			  	  	<h4>全球品牌活动</h4>
+	    			  	  	<h5>时刻关注有意义的创新，激发出前瞻领先的情感。</h5>
+	    			  	  </div>
+	    			  	</div>
+	    			  	  <div>
+	    			  	  	<img src="img/index-dropdownmenu-2-62-1354x810-190730.jpg" style="width: 100%;"/>
+	    			  	  </div>
+	    			  </div>
+	    		</div>
+	    	</div>
+	    </div>
+							</li>
+							<li class="zhi_hd"><a href="#">智·混动</a>
+								<div class="container hd">
+	    	<div class="row ">
+	    		<div class="col-lg-5 col-md-4 col-sm-4 col-sm-4 brand"style="height: 600px;">
+	    			<ul style="margin-left:-80px ;">
+	    				<li><a href="#">智·混动</a></li>
+	    			</ul>
+	    		</div>
+	    		<div class="col-lg-7 col-md-7 col-sm-7 col-sm-7 jieshao">
+	    			  <div class="history">
+	    			  	<div class="zt">
+	    			  		<div class="zi">
+	    			  	  	<h4>智·混动</h4>
+	    			  	  	<h5>智，在于兼顾自我与社会；在于坐享时代的巅峰；在于深感速度的激情；在于纯净澎湃的动力。</h5>
+	    			  	  </div>
+	    			  	</div>
+	    			  	  <div>
+	    			  	  	<img src="img/index-dropdownmenu-4-2-190515-1354x810.jpg" style="width: 100%;"/>
+	    			  	  </div>
+	    			  </div>
+	    			  </div>
+	    		</div>
+	    	</div>
+							</li>
+							<li class="f_gn"><a href="#">F高性能系列</a>
+								 <div class="container gn">
+	    	<div class="row zong">
+	    		<div class="col-lg-5 brand"style="height: 600px;">
+	    			<ul>
+	    				<li><a href="#">F高性能系列</a></li>
+	    			</ul>
+	    		</div>
+	    		<div class="col-lg-7 jieshao">
+	    			  <div class="history">
+	    			  	<div class="zt">
+	    			  		<div class="zi">
+	    			  	  	<h4>F高性能系列</h4>
+	    			  	  	<h5>F的精神，由赛道传奇延续至平素驾控。无论何时何地，酣畅的驾控快感从无休止。。</h5>
+	    			  	  </div>
+	    			  	</div>
+	    			  	  <div>
+	    			  	  	<img src="img/index-dropdownmenu-5-1-1354x810.jpg" style="width: 100%;"/>
+	    			  	  </div>
+	    			  </div>
+	    			  </div>
+	    		</div>
+	    	</div>
+							</li>
+							
+							<li class="x_xw"><a href="#">新闻资讯</a>
+								<div class="container xw">
+	    	<div class="row zong">
+	    		<div class="col-lg-5 brand"style="height: 600px;">
+	    			<ul>
+	    				<li><a href="#">新闻咨询</a></li>
+	    			</ul>
+	    		</div>
+	    		<div class="col-lg-7 jieshao">
+	    			  <div class="history">
+	    			  	<div class="zt">
+	    			  		<div class="zi">
+	    			  	  	<h4>新闻资讯</h4>
+	    			  	  	<h5>在这里您可以浏览关于雷克萨斯的所有资讯及优惠活动</h5>
+	    			  	  </div>
+	    			  	</div>
+	    			  	  <div>
+	    			  	  	<img src="img/index-dropdownmenu-6-1-1354x810.jpg" style="width: 100%;"/>
+	    			  	  </div>
+	    			  </div>
+	    		</div>
+	    	</div>
+	    </div>
+							</li>
+							<li><a href="#"><span class="glyphicon glyphicon-star-empty"></span></a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</nav>
+		
+		
+		<div class="RS_banner">
+			<div class="item">
+				  <img src="img/conceptcar-list-lffc-3-2880x1800.jpg" alt="..."width="100%" height="90%">
+				  <div class="carousel-caption">
+				    <h3>...</h3>
+				    <p>...</p>
+				  </div>
+			</div>
+		</div>
+		
+        
+       <div class="RS_nav">
+       	<h1>五米车身</h1>
+        <h2>RX L延展5米大气格局，超乎想象之上。恢弘气度，起伏间凸显凌厉；匠心细节，营造优雅温润的细腻美感。</h2>
+        <div class="RS_gundong">
+           <div>
+        	<span></span><p>0</p><i></i><span></span>
+		   </div>
+		   <div class="RS_car">
+		   	 <div class="cs"><img src="img/car.png"/ width="40%"></div>
+		   	 <div class="lt"><img src="img/wheel-8.png" alt="" width="40%"/></div>
+		   </div>
+        </div>
+	   </div>
+	      
+	   
+	   <div class="foot">
+	    	<div class="container">
+	    		<div class="col-lg-2 col-md-2  col-sm-6 col-xs-6">
+	    			<p style="font-weight: 600;margin: 20px 0 20px 10px;">车型总览</p>
+	    			<div class="col-md-4">CT</div>
+	    			<div class="col-md-8">LX</div>
+	    			<div class="col-md-4">IS</div>
+	    			<div class="col-md-8">RC</div>
+	    			<div class="col-md-4">ES</div>
+	    			<div class="col-md-8">LC</div>
+	    			<div class="col-md-4">GS</div>
+	    			<div class="col-md-8">YACHT</div>
+	    			<div class="col-md-4">LS</div>
+	    			<div class="col-md-8">豪华游艇</div>
+	    			<div class="col-md-4">UX</div>
+	    			<div class="col-md-8">车型筛选</div>
+	    			<div class="col-md-4">NX</div>
+	    			<div class="col-md-8">新车预估</div>
+	    			<div class="col-md-4">RX</div>
+	    			<div class="col-md-8">金融服务</div>
+	    		</div>
+	    		<div class="col-lg-2 col-md-2  col-sm-6 col-xs-6">
+	    			<p style="font-weight: 600;margin: 20px 0;">品牌天地</p>
+	    			<p>品牌历史</p>
+	    			<p>匠人匠心</p>
+	    			<p>设计理念</p>
+	    			<p>兼·荣之道</p>
+	    			<p>至纯至阴</p>
+	    			<p>环保理念</p>
+	    			<p>概念车</p>
+	    			<p>雷克萨斯品牌杂志</p>
+	    			<p>雷克萨斯全球设计大奖</p>
+	    			<p>品牌体验空间INTERS</p>
+	    		</div>
+	    		<div class="col-lg-2 col-md-2  hidden-sm hidden-xs">
+	    			<p style="font-weight: 600;margin: 20px 0;">智·混动</p>
+	    			<p>智·混动</p>
+	    		</div>
+	    		<div class="col-lg-2 col-md-2  hidden-sm hidden-xs">
+	    			<p style="font-weight: 600;margin: 20px 0;">F高性能系列</p>
+	    			<p>F高性能系列</p>
+	    		</div>
+	    		<div class="col-lg-2 col-md-2  hidden-sm hidden-xs">
+	    			<p style="font-weight: 600;margin: 20px 0;">车主服务</p>
+	    			<p>售后服务</p>
+	    			<p>e-LEXUS CLUB <br />智能手机应用</p>
+	    			<p>雷克萨斯智能副驾<br />G-BOOK</p>
+	    			<p>雷克萨斯手机互联</p>
+	    			<p>雷克萨斯汽车新品</p>
+	    			<p>雷克萨斯生活新品</p>
+	    			<p>雷克萨斯顾客常见问题</p>
+	    		</div>
+	    		<div class="col-lg-2 col-md-2  hidden-sm hidden-xs">
+	    			<p style="font-weight: 600;margin: 20px 0;">新闻资讯</p>
+	    			<p>新闻资讯</p>
+	    		</div>
+	    	</div>
+	    </div>
+	    <div class="foot_bottom">
+	    	<div class="container">
+	    		<div style="margin-top: 30px; text-align: center;cursor: pointer;">网站地图 | 认证二手车 | 经销商查询 | 人才招聘 | 联系我们 | 法律声明  | 全球网站 | 汽车维修技术信息 | 环保信息公开 | 召回信息公开 | 官方微博 | 官方微信 </div>
+	    		<div style="margin-top:20px; text-align: center;cursor: pointer;">© 2005-2019 雷克萨斯中国 | 丰田汽车（中国）投资有限公司</div>
+	    		<div style="margin-top:10px; text-align: center;cursor: pointer;margin-bottom:50px;">京ICP备11010962号  | 京公网安备11010502030819</div>
+	    	</div>
+	    </div>
+	
+	<div class="le-gotop">
+	    	<i href="" style="color: #ccc;text-decoration: none;"><img src="img/fanhuidongbu.png"/><br />返回顶部</i>
+	    </div>
+	
+	
+	</body>
+	<script type="text/javascript">
+		$(function(){
+			
+			//car
+			 var s=$(document).scrollTop()
+           var b=-1300
+		$(document).ready(function(){
+			var p=0;t=0;
+			$(window).scroll(function(){
+				p=$(this).scrollTop();
+				if(t<p){
+					b = b + 1
+                     $(".RS_nav .RS_car ").css("right",b+"%")
+                     
+				}else{
+					b = b - 1
+                     $(".RS_nav .RS_car ").css("right",b+"%")
+                     
+				}
+				setTimeout(function(){t=p;},0)
+			})
+		})
+			
+			
+			
+         //线
+           var s=$(document).scrollTop()
+           var b=0
+		$(document).ready(function(){
+			var p=0;t=0;
+			$(window).scroll(function(){
+				p=$(this).scrollTop();
+				if(t<p){
+					b = b + 5
+                     $(".RS_nav .RS_gundong span").eq(0).css("padding-left",b+"px")
+                     $(".RS_nav .RS_gundong span").eq(1).css("padding-right",b+"px")
+				     $(".RS_nav .RS_gundong p").html($(document).scrollTop())
+				}else{
+					b = b - 5
+                     $(".RS_nav .RS_gundong span").eq(0).css("padding-left",b+"px")
+                     $(".RS_nav .RS_gundong span").eq(1).css("padding-right",b+"px")
+				     $(".RS_nav .RS_gundong p").html($(document).scrollTop())
+				}
+				setTimeout(function(){t=p;},0)
+			})
+		})
+		$(document).scroll(function(){
+			console.log($(document).scrollTop())
+			if($(document).scrollTop()<300 || $(document).scrollTop()>=2501){
+				$(".RS_nav").hide()
+			}else{
+				$(".RS_nav").show()
+			}
+		})
+		
+			//go-top
+			$(document).scroll(function(){
+				console.log($(document).scrollTop())
+				if ($(document).scrollTop()>200) {
+					$(".le-gotop").show()
+				}else{
+					$(".le-gotop").hide()
+				}
+			}).trigger("scroll")
+			$(".le-gotop").click(function(){
+				$("html").animate({
+	    			"scrollTop":"0"
+	    		},1000)
+			})
+			//顶部浮动
+			$(document).scroll(function(){
+				console.log($(document).scrollTop())
+				if ($(document).scrollTop()>50) {
+					$(".LE_top").addClass("dingbu")
+				}else{
+					$(".LE_top").removeClass("dingbu")
+				}
+			})
+			
+	    	
+			
+			//nav_foot部分
+			$(".navs .navs_foot .item").mouseenter(function(){
+				$(this).stop().animate({"width":"500px","height":"500px"})
+				$(this).children().children(".zi_2").slideDown()
+			}).mouseleave(function(){
+				$(this).stop().animate({"width":"476px","height":"475.5px"})
+				$(this).children().children(".zi_2").slideUp()
+			})
+
+			
+			
+			//nav_top部分
+			$(".navs .navs_left .item").mouseenter(function(){
+			      $(this).stop().animate({"width":"986px","height":"503.25"})
+			      $(".navs_left .zi_2").slideDown()
+			})
+		    $(".navs .navs_left .item").mouseleave(function(){
+			      	$(this).stop().animate({"width":"951.5px","height":"475"})  
+				$(".navs_left .zi_2").slideUp()
+			     })
+		    
+		    
+			$(".navs .navs_right .item").mouseenter(function(){
+			     $(this).stop().animate({"width":"986px","height":"503.25"})
+				$(".navs_right .zi_2").slideDown()
+			})
+		    $(".navs .navs_right .item").mouseleave(function(){
+	$(this).stop().animate({"width":"951.5px","height":"475"})  
+				$(".navs_right .zi_2").slideUp()
+			      })
+			
+
+			//新闻
+			$(".x_xw").mouseenter(function(){
+              	  $(".xw").show();
+              })
+              $(".x_xw").mouseleave(function(){
+              	$(".xw").hide()
+              })
+			//车主服务
+			$(".c_cz").mouseenter(function(){
+              	  $(".cz").show();
+              })
+              $(".c_cz").mouseleave(function(){
+              	$(".cz").hide()
+              })
+			//f高性能
+			$(".f_gn").mouseenter(function(){
+              	  $(".gn").show();
+              })
+              $(".f_gn").mouseleave(function(){
+              	$(".gn").hide()
+              })
+			//智·混动
+			$(".zhi_hd").mouseenter(function(){
+              	  $(".hd").show();
+              })
+              $(".zhi_hd").mouseleave(function(){
+              	$(".hd").hide()
+              })
+			//品牌天地
+			$(".tiandi").mouseenter(function(){
+              	  $(".pinpai").show();
+              })
+              $(".tiandi").mouseleave(function(){
+              	$(".pinpai").hide()
+              })
+                $(".brand li").mouseenter(function(){
+                	var i=$(this).index()
+                	$(this).parents(".brand").siblings(".jieshao").children(".history").eq(i).show().siblings().hide()
+                })
+                
+			
+			//第一个li
+                $(".appear").mouseenter(function(){
+                	$(".top").show()
+                })
+                $(".appear").mouseleave(function(){
+                	$(".top").hide()
+                })
+                $(".lexus").mousemove(function(){
+	$(this).stop().animate({"width":"145px","height":"55px"},3,function(){
+	})
+			 })
+			 $(".lexus").mouseout(function(){
+	$(this).stop().animate({"width":"165px","height":"66px"})
+			 })
+	})
+	</script>
+</html>
+
+
+
+
+<!--//			var s =$(document).scrollTop()
+//			
+//			$(document).scroll(function(){
+//				if($(document).scrollTop()>600){
+////					$("#a").animate({"margin-left":"0px"},1000)
+////		$("#b").animate({"margin-left":"0px"},1000)
+//                 
+//                console.log($(document).scrollTop())
+//					s = s + 5
+//					console.log(s)
+//					
+//                   $("span").eq(0).css("padding-left",s+"px")
+//                   $("span").eq(1).css("padding-right",s+"px")
+//				     $("p").html(2000+s)
+//				}
+//				if ($(document).scrollTop()<600) {
+//					s = s - 5
+//					console.log(s)
+//                   $("span").eq(0).css("padding-left",s+"px")
+//                   $("span").eq(1).css("padding-right",s+"px")
+//				     $("p").html(2000-s)
+//				      
+//				}
+//			})
+//		})-->
